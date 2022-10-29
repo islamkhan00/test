@@ -1,7 +1,8 @@
 import express from "express";
 import fs from "fs";
 import path from "path";
-
+import { config } from 'dotenv';
+config();
 // import test from "./routes/test.route.js";
 // import {user} from "./routes/user.route.js";
 // import {category} from "./routes/category.route.js";
@@ -23,6 +24,6 @@ connectDB();
 // app.use(reviewrating);
 
 // app.use(router);
-app.listen(3002,(request,response) =>{
+app.listen(process.env.PORT || 3002,(request,response) =>{
     console.log("Yes your server connected with PORT:3002");
 })
